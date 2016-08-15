@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+</style>
+</head>
+<body>
+<h1>Welcome to the Data Hosting Service</h1>
+<p>We have hosted set of sample employee data. There are three ways to access the data. <br>
+1) List of employee ID's  <br>
+2) Get the record by employee ID  <br>
+3) Records of employees by country (Query)   <br>
+4) Complete Dataset
+
+
+</p>
+
+
+
+<p>
+Hit "Submit" to find out the list of Employee IDs -->
+<button class="button" onclick="myFunction3()">Submit</button><br>
+<script language="javascript" type="text/javascript">
+function myFunction3() {
+    var url = '/emp/emp-ids';
+	window.location = url;
+}
+</script>
+</p>
+
+
+<p>
+Enter the ID of employee to be retrieved: <input type="text" id="emp-id" autocomplete="off" > -->
+<button class="button" onclick="myFunction()">Submit</button><br>
+<script language="javascript" type="text/javascript">
+
+function myFunction() {
+    var x = document.getElementById("emp-id").value;
+	var url = '/emp/emp-id/'+x;
+	if(x.length < 1)
+	{window.alert("Employee ID field is blank");}
+	else{window.location = url;}
+	
+	
+}
+</script>
+</p>
+
+
+<p>
+Enter the country name to filter the dataset: <input type="text" id="emp-country" autocomplete="off"> -->
+<button class="button" onclick="myFunction2()">Submit</button><br>
+<script language="javascript" type="text/javascript">
+function myFunction2() {
+    var x = document.getElementById("emp-country").value;
+    var url = '/emp/emp-country?'+'country='+x;
+	if(x.length < 1)
+	{window.alert("Country field is blank");}
+	else{window.location = url;}
+}
+</script>
+</p>
+
+<p>
+Access to the Complete dataset -->
+<a class="button" href=emp role="button">Submit</a>
+</p>
+
+
+</body>
+</html>
