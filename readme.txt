@@ -5,7 +5,7 @@ The description of files is given below
 By default if this python program is run it starts the server on localhost in 5000 port
 Also, this application has been hosted online at 
 
-http://sridhar086.pythonanywhere.com
+http://webhost.pythonanywhere.com/
 
 3) The "templates" directory contains "index.htm" which is rendered when the server is contacted. 
 
